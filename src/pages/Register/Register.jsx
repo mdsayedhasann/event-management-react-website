@@ -8,9 +8,11 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 // React Toast
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import auth from "../../firebase/firebase.init";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser , updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -18,12 +20,14 @@ const Register = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    const name = form.name.value;
+    const photo = form.photo.value;
+    console.log(email, password, name, photo);
 
     if (password.length < 6) {
       toast.error("Password must be at least 6 character", {
         position: "bottom-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -36,7 +40,7 @@ const Register = () => {
     } else if (!/[A-Z]/.test(password)) {
       toast.error("You should use at least one uppercase", {
         position: "bottom-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -48,7 +52,7 @@ const Register = () => {
     } else if (!/[0-9]/.test(password)) {
       toast.error("You should use at least one number", {
         position: "bottom-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -57,11 +61,30 @@ const Register = () => {
         theme: "light",
       });
       return;
+    }else if(!/[~,!,@,#,$,%,^,&,*,(,),_,+,},>,.]/.test(password)){
+        toast.error("You should use at least one special character", {
+            position: "bottom-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          return;
     }
 
     createUser(email, password)
-      .then(() => {
+      .then((currentUser) => {
         e.target.reset();
+        updateUser(name, photo)
+        .then(hoise => {
+            console.log(name);
+        })
+        .catch(error => {
+            console.log(error);
+        })
 
         toast.success("Registration Successfull", {
           position: "bottom-right",
@@ -73,7 +96,7 @@ const Register = () => {
           progress: undefined,
           theme: "light",
         });
-
+        console.log(currentUser);
         navigate("/");
       })
       .catch(() => {
@@ -113,7 +136,7 @@ const Register = () => {
                   </label>
                   <input
                     type="text"
-                    name="Name"
+                    name="name"
                     placeholder="Name"
                     className="input input-bordered"
                     required

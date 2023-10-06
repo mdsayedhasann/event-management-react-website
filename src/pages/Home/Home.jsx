@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "../../shared/Header/Navbar";
 import TopHeader from "../../shared/Header/TopHeader";
 import Logo from "../../shared/Logo/Logo";
@@ -7,14 +7,16 @@ import Logo from "../../shared/Logo/Logo";
 // React Toast
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Home = () => {
+    const {user} = useContext(AuthContext)
   return (
     <div>
       <TopHeader></TopHeader>
       <Logo></Logo>
       <Navbar></Navbar>
-      <h2>This Is Home</h2>
+      <h2>This Is Home </h2>
 
       <div>
         <ToastContainer
