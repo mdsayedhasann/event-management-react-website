@@ -1,36 +1,38 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import '../Header/css/navbar.css'
+import "../Header/css/navbar.css";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
-  const {user, logout} = useContext(AuthContext)
+  const { user, logout } = useContext(AuthContext);
   const handleSignOut = () => {
-     logout()
-    .then(() => {
-      console.log('Logout Success');
-    })
-    .catch(error => {
-      console.error(error);
-    })
-  }
-    const links = <>
-        <li>
-            <NavLink className='text-black font-bold hover:bg-green-800' to='/'>
-                Home
-            </NavLink>
-        </li>
-        <li>
-            <NavLink className='text-black font-bold' to='/login'>
-                Login
-            </NavLink>
-        </li>
-        <li>
-            <NavLink className='text-black font-bold' to='/register'>
-                Register
-            </NavLink>
-        </li>
+    logout()
+      .then(() => {
+        console.log("Logout Success");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+  const links = (
+    <>
+      <li>
+        <NavLink className="text-black font-bold hover:bg-green-800" to="/">
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="text-black font-bold" to="/login">
+          Login
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="text-black font-bold" to="/register">
+          Register
+        </NavLink>
+      </li>
     </>
+  );
   return (
     <div>
       <div className="navbar bg-green-200 rounded-lg">
@@ -64,13 +66,15 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end flex gap-3">
-          {
-            user ? <p> {user.email}  </p> : ''
-          }
+          {user ? <p> {user.email} </p> : ""}
 
-          {
-            user ? <a onClick={handleSignOut} className="btn">Logout</a> : <a className="btn">Login</a>
-          }
+          {user ? (
+            <a onClick={handleSignOut} className="btn btn-error text-white">
+              Logout
+            </a>
+          ) : (
+            <a className="btn">Login</a>
+          )}
         </div>
       </div>
     </div>
