@@ -5,32 +5,27 @@ import Logo from "../../shared/Logo/Logo";
 
 
 // React Toast
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Banner from "../../shared/Banner/Banner";
+import Footer from "../../shared/Footer/Footer";
+import Events from "../../shared/Events/Events";
 
 const Home = () => {
     const {user} = useContext(AuthContext)
+
   return (
     <div>
       <TopHeader></TopHeader>
       <Logo></Logo>
       <Navbar></Navbar>
-      <h2>This Is Home </h2>
+      <Banner></Banner>
+      <Events></Events>
 
+    <Footer></Footer>
       <div>
-        <ToastContainer
-          position="Register Success"
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
+        
       </div>
     </div>
   );

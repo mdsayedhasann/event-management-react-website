@@ -4,8 +4,9 @@ import "../Header/css/navbar.css";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout, loading } = useContext(AuthContext);
   const handleSignOut = () => {
+    
     logout()
       .then(() => {
         console.log("Logout Success");
@@ -33,9 +34,10 @@ const Navbar = () => {
       </li>
     </>
   );
+  
   return (
     <div>
-      <div className="navbar bg-green-200 rounded-lg">
+      <div className="navbar bg-pink-500 rounded-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -70,7 +72,7 @@ const Navbar = () => {
           {user ? <p className="font-bold"> {user?.displayName}</p> : ""}
 
           {user ? (
-            <a onClick={handleSignOut} className="btn btn-error text-white">
+            <a onClick={handleSignOut} className="btn bg-purple-950 border-none text-white">
               Logout
             </a>
           ) : (

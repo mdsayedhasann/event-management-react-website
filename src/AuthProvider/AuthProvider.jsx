@@ -12,15 +12,18 @@ import {
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   // User Registration Start
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   // User Registration End
 
   //   User Login Start
   const signIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
   //   User Login End
@@ -28,18 +31,18 @@ const AuthProvider = ({ children }) => {
   //   Update User Start
 
   const updateUser = (name, photo) => {
-    return(updateProfile(auth.currentUser, {
-        displayName: name, 
-        photoURL: photo
-    }))
-  }
-
-
+    setLoading(true);
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
 
   //   Update User End
 
   //   User Logout Start
   const logout = () => {
+    setLoading(true);
     return signOut(auth);
   };
   //   User Logout End
@@ -47,13 +50,14 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       setUser(currentuser);
+      setLoading(false);
     });
     return () => {
       unsubscribe;
     };
   }, []);
 
-  const AuthInfo = { user, createUser, signIn, updateUser, logout };
+  const AuthInfo = { user, createUser, signIn, updateUser, logout, loading };
   return (
     <AuthContext.Provider value={AuthInfo}>{children}</AuthContext.Provider>
   );

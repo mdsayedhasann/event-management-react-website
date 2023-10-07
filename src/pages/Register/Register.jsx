@@ -8,8 +8,6 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 // React Toast
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import auth from "../../firebase/firebase.init";
-import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser , updateUser } = useContext(AuthContext);

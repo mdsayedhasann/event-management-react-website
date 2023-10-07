@@ -4,6 +4,7 @@ import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
+import SingleEvent from "../shared/Events/SingleEvent";
 
 const Router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const Router = createBrowserRouter([
         {
             path: '/login',
             element: <Login></Login>
+        },
+        {
+          path: '/event/:id',
+          element: <SingleEvent></SingleEvent>,
+          loader: () => fetch('../../public/event.json')
         }
     ]
   },
