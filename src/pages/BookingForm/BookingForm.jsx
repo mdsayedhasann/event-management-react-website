@@ -23,9 +23,9 @@ const BookingForm = () => {
 
   const calculate = (e) => {
     e.preventDefault();
-    const total_picked_ticket_price = total_ticket_count * ticket_price;
-    setTotalTicketPrice(total_picked_ticket_price);
-    return setTotalTicketPrice
+    // const total_picked_ticket_price = total_ticket_count * ticket_price;
+    setTotalTicketPrice(total_ticket_count * ticket_price);
+    
   };
 
   return (

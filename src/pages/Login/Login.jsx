@@ -3,6 +3,8 @@ import Navbar from "../../shared/Header/Navbar";
 import Logo from "../../shared/Logo/Logo";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FcGoogle } from 'react-icons/fc';
+
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -93,9 +95,9 @@ const Login = () => {
               </div>
             </form>
 
-            <div className="flex justify-center py-4">
-              <button className="bg-base-950 text-black border px-4 py-2" onClick={handleGoogleLogin}>
-               Sign In With Google
+            <div className="text-center py-4 flex justify-center">
+              <button className="bg-base-950 text-black border px-4 py-2 flex justify-center items-center gap-3 rounded-lg shadow-md" onClick={handleGoogleLogin}>
+              <FcGoogle></FcGoogle> Sign In With Google
               </button>
             </div>
             <ToastContainer
