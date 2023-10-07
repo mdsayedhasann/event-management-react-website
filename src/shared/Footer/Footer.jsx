@@ -4,12 +4,12 @@ const Footer = () => {
   return (
     <div>
       <footer className="footer p-10 bg-gradient-to-r text-white from-purple-950 to-pink-500 py-16">
-        <div>
-            <img className="w-[100px] rounded-full" src="/public/React-Event.png" alt="" />
-            <h2 className="text-white">
-                Tech Everyday
-            </h2>
-
+        <div className="flex justify-center items-center">
+          <img
+            className="w-[150px] rounded-full mx-auto"
+            src="/public/React-Event.png"
+            alt=""
+          />
         </div>
         <nav>
           <header className="footer-title">Services</header>
@@ -33,7 +33,7 @@ const Footer = () => {
         </nav>
       </footer>
       <div className="bg-gray-100 py-1">
-            <p className="text-center">Copyright @ 2023 </p>
+        <p className="text-center">Copyright @ 2023 </p>
       </div>
     </div>
   );

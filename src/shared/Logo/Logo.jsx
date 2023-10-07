@@ -1,11 +1,14 @@
 import React from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from 'react-router-dom';
 
 const Logo = () => {
     return (
-        <div data-aos="fade-down" data-aos-duration="3000" className='w-full mx-auto flex justify-center'>
-            <img className='w-[15%]' src="/public/React-Event.png" alt="" />
+        <div data-aos="fade-down" data-aos-duration="1000" className='w-full mx-auto flex justify-center'>
+            <Link to='/'>
+            <img className='w-[300px] rounded-full' src="/public/React-Event.png" alt="" />
+            </Link>
         </div>
     );
 };

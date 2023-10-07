@@ -125,7 +125,7 @@ const Register = () => {
                 add events or see details of a event only for registered users
               </p>
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div data-aos='fade-up' data-aos-duration='3000' className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
               <form className="card-body" onSubmit={handleRegister}>
                 <div className="form-control">
                   <label className="label">

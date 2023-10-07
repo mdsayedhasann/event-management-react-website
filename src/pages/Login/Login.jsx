@@ -3,6 +3,8 @@ import Navbar from "../../shared/Header/Navbar";
 import Logo from "../../shared/Logo/Logo";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 // React Toast
 import { ToastContainer, toast } from 'react-toastify';
@@ -60,7 +62,7 @@ const Login = () => {
               events or see details of a event only for registered users
             </p>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div data-aos='fade-up' data-aos-duration='3000' className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form className="card-body" onSubmit={handleLogin}>
               <div className="form-control">
                 <label className="label">

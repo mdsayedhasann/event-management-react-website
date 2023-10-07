@@ -29,7 +29,7 @@ const SingleEvent = () => {
       <Logo></Logo>
       <Navbar></Navbar>
       <div className="grid grid-cols-4 gap-5">
-        <div className="col-span-3 bg-pink-50 px-10">
+        <div data-aos='fade-down' data-aos-duration='3000' className="col-span-3 bg-pink-50 px-10">
           <img className="w-[90%] py-4 rounded-xl" src={img_url} alt="" />
           <h2 className="text-3xl py-5 font-bold">{event_name}</h2>
           <p className="w-3/4">{event_description}</p>
@@ -74,7 +74,7 @@ const SingleEvent = () => {
             <button className="btn btn-primary">Book Now</button>
           </div>
         </div>
-        <div className="col-span-1 bg-gray-50 h-screen px-10">
+        <div data-aos='fade-left' data-aos-duration='2000' className="col-span-1 bg-gray-50 h-screen px-10">
           <h3 className="text-center text-2xl font-semibold py-4">
               More Details 
           </h3>

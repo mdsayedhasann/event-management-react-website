@@ -10,6 +10,8 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Banner from "../../shared/Banner/Banner";
 import Footer from "../../shared/Footer/Footer";
 import Events from "../../shared/Events/Events";
+import About from "../About/About";
+import Faq from "../FAQ/Faq";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
@@ -20,8 +22,9 @@ const Home = () => {
       <Logo></Logo>
       <Navbar></Navbar>
       <Banner></Banner>
+      <About></About>
       <Events></Events>
-
+    <Faq></Faq>
       <Footer></Footer>
       <div></div>
     </div>
