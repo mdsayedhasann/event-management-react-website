@@ -1,9 +1,8 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import TopHeader from "../Header/TopHeader";
 import Logo from "../Logo/Logo";
 import Navbar from "../Header/Navbar";
-import OtherEvent from "./OtherEvent";
 
 const SingleEvent = () => {
   const { id } = useParams();
@@ -20,7 +19,8 @@ const SingleEvent = () => {
     event_description,
     attendees_count,
     ticket_price,
-    total_likes, page_views
+    total_likes,
+    page_views,
   } = event;
   console.log(event);
   return (
@@ -29,7 +29,11 @@ const SingleEvent = () => {
       <Logo></Logo>
       <Navbar></Navbar>
       <div className="grid grid-cols-4 gap-5">
-        <div data-aos='fade-down' data-aos-duration='3000' className="col-span-3 bg-pink-50 px-10">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="3000"
+          className="col-span-3 bg-pink-50 px-10"
+        >
           <img className="w-[90%] py-4 rounded-xl" src={img_url} alt="" />
           <h2 className="text-3xl py-5 font-bold">{event_name}</h2>
           <p className="w-3/4">{event_description}</p>
@@ -71,12 +75,18 @@ const SingleEvent = () => {
           </div>
           {/* Table End */}
           <div className="my-5">
-            <button className="btn btn-primary">Book Now</button>
+            <Link to={`/booking/${id}`}>
+              <button className="btn btn-primary">Book Now</button>
+            </Link>
           </div>
         </div>
-        <div data-aos='fade-left' data-aos-duration='2000' className="col-span-1 bg-gray-50 h-screen px-10">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="2000"
+          className="col-span-1 bg-gray-50 h-screen px-10"
+        >
           <h3 className="text-center text-2xl font-semibold py-4">
-              More Details 
+            More Details
           </h3>
           <div className="shadow flex-col flex w-full">
             <div className="stat">
@@ -120,8 +130,6 @@ const SingleEvent = () => {
               <div className="stat-value text-secondary">{page_views}</div>
               <div className="stat-desc">21% more than last month</div>
             </div>
-
-           
           </div>
         </div>
       </div>

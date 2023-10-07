@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import SingleEvent from "../shared/Events/SingleEvent";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "../pages/Profile/Profile";
+import BookingForm from "../pages/BookingForm/BookingForm";
 
 
 const Router = createBrowserRouter([
@@ -33,7 +34,14 @@ const Router = createBrowserRouter([
         {
           path: '/event/:id',
           element: <PrivateRoute><SingleEvent></SingleEvent></PrivateRoute> ,
-          loader: () => fetch('../../public/event.json')
+          loader: () => fetch('/public/event.json')
+        },
+        {
+          path: '/booking/:id',
+          element: <PrivateRoute>
+            <BookingForm></BookingForm>
+          </PrivateRoute>,
+          loader: () => fetch('/public/event.json')
         }
     ]
   },
