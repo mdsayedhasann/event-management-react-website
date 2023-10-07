@@ -3,7 +3,6 @@ import Navbar from "../../shared/Header/Navbar";
 import TopHeader from "../../shared/Header/TopHeader";
 import Logo from "../../shared/Logo/Logo";
 
-
 // React Toast
 // import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,7 +12,7 @@ import Footer from "../../shared/Footer/Footer";
 import Events from "../../shared/Events/Events";
 
 const Home = () => {
-    const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
 
   return (
     <div>
@@ -23,10 +22,8 @@ const Home = () => {
       <Banner></Banner>
       <Events></Events>
 
-    <Footer></Footer>
-      <div>
-        
-      </div>
+      <Footer></Footer>
+      <div></div>
     </div>
   );
 };

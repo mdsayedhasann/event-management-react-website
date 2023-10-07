@@ -8,7 +8,10 @@
       "event_description": "Explore the latest in technology and gaming at TechXpo 2023! Join us on November 15th from 9:00 AM to 6:00 PM at Tech Center in Cityville for an immersive experience. Connect with industry experts, witness cutting-edge innovations, and enjoy interactive gaming demos. With 5000 attendees expected, don't miss out. Tickets are priced at $50.00.",
       "attendees_count": 5000,
       "ticket_price": 50.00,
-      "img_url": "https://i.ibb.co/Ykh25Cb/image.png"
+      "img_url": "https://i.ibb.co/n6SX77Q/image.png",
+      "total_likes": "25.7k",
+      "page_views" : "2M"
+      
     },
     {
       "id": 2,
@@ -19,7 +22,9 @@
       "event_description": "Get ready for the ultimate gaming extravaganza! GameCon 2023 is happening on December 5th from 10:00 AM to 8:00 PM at Gamer's Paradise Convention Center. Immerse yourself in the world of gaming with 8000 fellow enthusiasts. Explore the latest games, meet top gamers, and compete in tournaments. Tickets are available for $45.00.",
       "attendees_count": 8000,
       "ticket_price": 45.00,
-      "img_url": "https://i.ibb.co/XzD3Qkh/image.png"
+      "img_url": "https://i.ibb.co/XzD3Qkh/image.png",
+      "total_likes": "8k",
+      "page_views" : "5M"
     },
     {
       "id": 3,
@@ -30,7 +35,9 @@
       "event_description": "TechFest 2023 invites you to explore the future of technology on September 20th from 9:30 AM to 5:30 PM at Innovation Hall in Innovatown for a day of innovation and inspiration. With 3000 attendees expected, don't miss out on this tech extravaganza. Tickets are priced at $60.00.",
       "attendees_count": 3000,
       "ticket_price": 60.00,
-      "img_url": "https://i.ibb.co/frGXG61/image.png"
+      "img_url": "https://i.ibb.co/frGXG61/image.png",
+      "total_likes": "5.7k",
+      "page_views" : "11M"
     },
     {
       "id": 4,
@@ -41,7 +48,9 @@
       "event_description": "Experience gaming paradise at Gamer's Expo 2023! Happening on October 8th from 11:00 AM to 9:00 PM at Game Central Arena, this event is a must-attend for gamers. Join 7000 fellow gamers, explore the latest games, and participate in thrilling competitions. Tickets are available for $55.00.",
       "attendees_count": 7000,
       "ticket_price": 55.00,
-      "img_url": "https://i.ibb.co/3mK27Yh/image.png"
+      "img_url": "https://i.ibb.co/3mK27Yh/image.png",
+      "total_likes": "2.7k",
+      "page_views" : "8.9M"
     },
     {
       "id": 5,
@@ -52,7 +61,9 @@
       "event_description": "Tech Summit 2023, the tech industry's most awaited event, is happening on November 30th from 10:00 AM to 7:00 PM at Tech Tower in Silicon City. Connect with tech visionaries, explore groundbreaking innovations, and network with 4000 attendees. Tickets are priced at $70.00.",
       "attendees_count": 4000,
       "ticket_price": 70.00,
-      "img_url": "https://i.ibb.co/yNSQJHp/image.png"
+      "img_url": "https://i.ibb.co/yNSQJHp/image.png",
+      "total_likes": "11.7k",
+      "page_views" : "6.3M"
     },
     {
       "id": 6,
@@ -63,7 +74,9 @@
       "event_description": "Experience the fusion of gaming and technology at GameTech Fusion 2023! Join us on December 18th from 12:00 PM to 9:00 PM at Fusion Convention Center for an extraordinary event. Connect with 6000 enthusiasts, explore cutting-edge tech in gaming, and enjoy thrilling demos. Tickets are available for $65.00.",
       "attendees_count": 6000,
       "ticket_price": 65.00,
-      "img_url": "https://i.ibb.co/d6krpHc/image.png"
+      "img_url": "https://i.ibb.co/d6krpHc/image.png",
+      "total_likes": "17k",
+      "page_views" : "21M"
     }
   ]
   

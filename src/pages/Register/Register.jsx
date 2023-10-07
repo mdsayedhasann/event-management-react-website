@@ -113,11 +113,10 @@ const Register = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
       <Logo></Logo>
-      <TopHeader></TopHeader>
+      <Navbar></Navbar>
       <div>
-        <div className="hero min-h-screen bg-orange-50">
+        <div className="hero min-h-screen bg-purple-50">
           <div className="hero-content flex-col ">
             <div className="text-center">
               <h1 className="text-5xl font-bold">Register now!</h1>
@@ -179,7 +178,7 @@ const Register = () => {
                   />
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn bg-orange-400">Register</button>
+                  <button className="btn bg-purple-950 text-white">Register</button>
                 </div>
               </form>
               <ToastContainer

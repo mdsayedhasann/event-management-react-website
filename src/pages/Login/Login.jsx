@@ -4,29 +4,54 @@ import Logo from "../../shared/Logo/Logo";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
+// React Toast
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleProviderAuth } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    
+
     signIn(email, password)
       .then(() => {
         navigate("/");
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(() => {
+        toast.error("Login Failed! Invalid Password", {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
     console.log(email, password);
+
+   
   };
+ const handleGoogleLogin = () => {
+  googleProviderAuth()
+  .then((success) => {
+    console.log(success);
+  })
+  .catch(error => {
+    console.error(error);
+  })
+ }
   return (
     <div>
-      <Navbar></Navbar>
       <Logo></Logo>
-      <div className="hero min-h-screen bg-orange-50">
+      <Navbar></Navbar>
+      <div className="hero min-h-screen bg-purple-50">
         <div className="hero-content flex-col ">
           <div className="text-center">
             <h1 className="text-5xl font-bold">Login now!</h1>
@@ -62,14 +87,32 @@ const Login = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-orange-400">Login</button>
+                <button className="btn bg-purple-950 text-white">Login</button>
               </div>
             </form>
+
+            <div className="flex justify-center py-4">
+              <button className="bg-base-950 text-black border px-4 py-2" onClick={handleGoogleLogin}>
+               Sign In With Google
+              </button>
+            </div>
+            <ToastContainer
+              position="bottom-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
           </div>
           <div className="my-3">
             <p>
               Don't have a account?
-              <span className="text-orange-500 px-3">
+              <span className="text-purple-500 px-3">
                 {" "}
                 <Link to="/register">Register</Link>{" "}
               </span>

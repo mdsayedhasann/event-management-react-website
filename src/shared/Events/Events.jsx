@@ -10,7 +10,7 @@ const Events = () => {
     } , [])
     return (
         <div className='py-5'>
-            <div className='text-center w-3/4 mx-auto'>
+            <div className='text-center w-3/4 mx-auto py-10'>
                 <h2 className='font-bold text-center text-5xl '>Upcoming Events</h2>
                 <p className='w-1/2 mx-auto py-3 text-gray-500'>This section will provide detailed information about the upcoming event, including its name, date, time, location, and what attendees can expect.</p>
             </div>
