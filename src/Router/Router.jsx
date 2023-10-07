@@ -6,6 +6,8 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import SingleEvent from "../shared/Events/SingleEvent";
 import PrivateRoute from "./PrivateRoute";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Router = createBrowserRouter([
   {

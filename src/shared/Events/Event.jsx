@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Event = ({ event }) => {
   const {
@@ -13,7 +15,7 @@ const Event = ({ event }) => {
   } = event;
   return (
     <div>
-      <div className="card card-compact w-full px-5 md:px-0 md:w-[95%] bg-base-100 shadow-xl">
+      <div data-aos='zoom-in' data-aos-duration="2000" className="card card-compact w-full px-5 md:px-0 md:w-[95%] bg-base-100 shadow-xl">
         <figure>
           <img
             className="h-[200px] md:h-[250px]"

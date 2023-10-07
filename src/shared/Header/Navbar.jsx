@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../Header/css/navbar.css";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Navbar = () => {
   const { user, logout, loading } = useContext(AuthContext);
@@ -37,7 +39,7 @@ const Navbar = () => {
   
   return (
     <div>
-      <div className="navbar bg-pink-500 rounded-lg">
+      <div data-aos="flip-up" data-aos-duration='3000' className="navbar bg-pink-500 rounded-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
