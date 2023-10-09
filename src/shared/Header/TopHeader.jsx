@@ -10,15 +10,17 @@ const TopHeader = () => {
   return (
     <div className="bg-purple-950 rounded-t-2xl py-2">
       <div className="flex justify-between px-8">
+        <div className="flex-row">
         <small className="text-white px-4">
           Email: sayed.hasan0011@gmail.com
           <span className="px-3"></span>
           Phone: 01686659001
         </small>
+        </div>
 
 
-      <div className="text-white">
-        <div className="flex gap-4 items-center">
+      <div className="text-white hidden md:block">
+        <div className="hidden md:flex gap-4 items-center">
         <a href="https://www.facebook.com/aponhossain0011/">  <BsFacebook> </BsFacebook></a>
         <a href="https://www.facebook.com/aponhossain0011/">  <AiFillTwitterCircle></AiFillTwitterCircle></a>
         <a href="https://www.facebook.com/aponhossain0011/">  <FaLinkedin></FaLinkedin></a>

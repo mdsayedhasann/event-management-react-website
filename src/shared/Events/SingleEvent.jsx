@@ -28,7 +28,7 @@ const SingleEvent = () => {
       <TopHeader></TopHeader>
       <Logo></Logo>
       <Navbar></Navbar>
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid md:grid-cols-4 md:gap-5 grid-rows-2">
         <div
           data-aos="fade-down"
           data-aos-duration="3000"
@@ -83,7 +83,7 @@ const SingleEvent = () => {
         <div
           data-aos="fade-left"
           data-aos-duration="2000"
-          className="col-span-1 bg-gray-50 h-screen px-10"
+          className="col-span-1 bg-gray-50 h-screen px-10 w-full mx-auto"
         >
           <h3 className="text-center text-2xl font-semibold py-4">
             More Details

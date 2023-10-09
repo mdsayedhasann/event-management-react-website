@@ -22,9 +22,10 @@ const Home = () => {
       <Logo></Logo>
       <Navbar></Navbar>
       <Banner></Banner>
+
       <About></About>
       <Events></Events>
-    <Faq></Faq>
+      <Faq></Faq>
       <Footer></Footer>
       <div></div>
     </div>

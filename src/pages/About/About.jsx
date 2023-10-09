@@ -6,7 +6,7 @@ import 'aos/dist/aos.css'
 const About = () => {
   return (
     <div className="py-6">
-      <div className="grid grid-cols-2 items-center">
+      <div className="grid md:grid-cols-2 items-center grid-rows-1">
         <div>
           <div
             data-aos="flip-up"

@@ -37,13 +37,13 @@ const Navbar = () => {
   );
 
   return (
-    <div>
+    <div className="">
       <div
         data-aos="flip-up"
         data-aos-duration="3000"
         className="navbar bg-pink-500 rounded-lg"
       >
-        <div className="navbar-start">
+        <div className="navbar-start z-50">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
