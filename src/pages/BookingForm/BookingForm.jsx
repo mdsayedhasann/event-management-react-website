@@ -15,16 +15,20 @@ const BookingForm = () => {
   console.log("ticket Price", typeof ticket_price);
   const ticketRef = useRef(0);
   const total_ticket = ticketRef.current.value;
+
   const total_ticket_count = parseInt(total_ticket);
-  console.log("total ticket", typeof total_ticket_count);
-  const handleTicket = (e) => {};
+  console.log("total ticket", total_ticket_count);
+  const handleTicket = (e) => {
+      console.log('I am clicked')
+  };
 
   const [totalTicketPrice, setTotalTicketPrice] = useState(1);
 
   const calculate = (e) => {
     e.preventDefault();
-    // const total_picked_ticket_price = total_ticket_count * ticket_price;
-    setTotalTicketPrice(total_ticket_count * ticket_price);
+    const count_ticket_field = e.target.ticket.value
+    const Int_count_ticket_field = parseInt(count_ticket_field)
+    setTotalTicketPrice(Int_count_ticket_field * ticket_price);
     
   };
 
@@ -85,13 +89,13 @@ const BookingForm = () => {
             <input
               type="number"
               name="ticket"
-              ref={ticketRef}
               placeholder="How many tickets do you want to purchase?"
               className="input input-bordered"
+              onChange={calculate}
             />
           </div>
           <p>Total Price: {totalTicketPrice}</p>
-          <button className="btn" onClick={calculate}>
+          <button className="btn">
             {" "}
             Calculate
           </button>

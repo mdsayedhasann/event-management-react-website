@@ -76,7 +76,7 @@ const SingleEvent = () => {
           {/* Table End */}
           <div className="my-5">
             <Link to={`/booking/${id}`}>
-              <button className="btn btn-primary">Book Now</button>
+              <button className="px-3 py-2 rounded-md text-white bg-gradient-to-r from-purple-950 to-pink-500 my-6">Book Now</button>
             </Link>
           </div>
         </div>

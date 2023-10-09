@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { Link, createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import Register from "../pages/Register/Register";
@@ -8,12 +8,14 @@ import SingleEvent from "../shared/Events/SingleEvent";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "../pages/Profile/Profile";
 import BookingForm from "../pages/BookingForm/BookingForm";
+import Error from "../Error/Error";
 
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
         {
             path: '/',
@@ -34,15 +36,16 @@ const Router = createBrowserRouter([
         {
           path: '/event/:id',
           element: <PrivateRoute><SingleEvent></SingleEvent></PrivateRoute> ,
-          loader: () => fetch('/public/event.json')
+          loader: () => fetch('./event.json')
         },
         {
           path: '/booking/:id',
           element: <PrivateRoute>
             <BookingForm></BookingForm>
           </PrivateRoute>,
-          loader: () => fetch('/public/event.json')
+          loader: () => fetch('/event.json')
         }
+        
     ]
   },
 ]);

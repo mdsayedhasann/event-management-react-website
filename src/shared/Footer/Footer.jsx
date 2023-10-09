@@ -1,16 +1,13 @@
 import moment from "moment";
 import React from "react";
+import Logo from "../Logo/Logo";
 
 const Footer = () => {
   return (
     <div>
       <footer className="footer p-10 bg-gradient-to-r text-white from-purple-950 to-pink-500 py-16">
-        <div className="flex justify-center items-center flex-col">
-          <img
-            className="w-[150px] rounded-full mx-auto"
-            src="/public/React-Event.png"
-            alt=""
-          />
+        <div className="flex justify-center items-center flex-col w-1/2">
+          <Logo className='1/4'></Logo>
           
         </div>
         <nav>

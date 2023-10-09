@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "../../shared/Header/Navbar";
 import Logo from "../../shared/Logo/Logo";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,6 +14,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+  const [showpassword, setShowpassword] = useState(false)
   const { signIn, googleProviderAuth } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogin = (e) => {
@@ -51,6 +52,10 @@ const Login = () => {
     console.error(error);
   })
  }
+
+ const handlePasswordShow = () => {
+   setShowpassword(!showpassword)
+ }
   return (
     <div>
       <Logo></Logo>
@@ -82,13 +87,16 @@ const Login = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  type="password"
+               <div className="relative">
+               <input
+                  type={showpassword ? 'text' : 'password'}
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   required
                 />
+                <span className="absolute right-5 top-3 h-full " onClick={handlePasswordShow}>Show</span>
+               </div>
               </div>
               <div className="form-control mt-6">
                 <button className="btn bg-purple-950 text-white">Login</button>
