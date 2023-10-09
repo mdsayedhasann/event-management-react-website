@@ -95,7 +95,7 @@ const Login = () => {
                   className="input input-bordered w-full"
                   required
                 />
-                <span className="absolute right-5 top-3 h-full " onClick={handlePasswordShow}>Show</span>
+                <span className="absolute right-5 top-3 h-full " onClick={handlePasswordShow}> {showpassword ? 'Hide' : 'Show'} </span>
                </div>
               </div>
               <div className="form-control mt-6">
